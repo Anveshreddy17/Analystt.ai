@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+  <div id="app">
+    <h1 id="count-display">0</h1>
+    <button id="increment-btn">Add</button>
+  </div>
+
+  <script>
+    
+    function handleMount() {
+      console.log('Component mounted');
+    }
+
+    
+    function handleStateChange(newState) {
+      console.log('State changed:', newState);
+      document.getElementById('count-display').textContent = newState.count;
+    }
+
+   
+    function handleClick() {
+      state.count++;
+      handleStateChange(state);
+    }
+
+    
+    const state = { count: 0 };
+
+    
+    handleMount();
+    handleStateChange(state);
+
+   
+    document.getElementById('increment-btn').addEventListener('click', handleClick);
+  </script>
+</body>
+</html>
